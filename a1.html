@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calendar {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .calendar h1 {
+      margin-bottom: 10px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .calendar p {
+      font-size: 18px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="calendar">
+    <h1>Today's Date</h1>
+    <p id="date"></p>
+  </div>
+
+  <script>
+    const now = new Date();
+    const day = now.getDate();
+    const month = now.toLocaleString('default', { month: 'long' });
+    const year = now.getFullYear();
+    document.getElementById('date').textContent = `${day} ${month} ${year}`;
+  </script>
+</body>
+</html>
